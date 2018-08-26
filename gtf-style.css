@@ -1,0 +1,133 @@
+.GTF_thumb_frame {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin: 0px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    margin-bottom: 26px;
+}
+
+.GTF_thumb_frame-list {
+    clear: both;
+    display: block;
+    margin: 0 0 6px 0;
+    min-height: 90px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    width: 99%;
+}
+
+.entry-content .GTF_thumb_frame-list img {
+    width: 120px;
+}
+
+.GTF_thumb_inner_frame {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    /*
+    top:-60%;
+    left:-10%;*/
+}
+
+.GTF_thumb_inner_frame-list {
+    width: 100%;
+    position: absolute;
+}
+
+.GTF_thumb_IMG {}
+
+.GTF_thumb_cell_item {
+    display: block;
+}
+
+div.GTF_thumb_cell h5 {
+    height: 30px;
+    font-size: 10pt;
+    margin-bottom: 16px overflow:hidden;
+    line-height: 12pt;
+    font-weight: normal;
+}
+
+div.GTF_thumb_cell img {
+    clear: both;
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+    width: 150px;
+}
+
+div.GTF_thumb_cell img:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.GTF_thumb_cell-list img {
+    margin: 0 auto;
+    width: 120px;
+}
+
+.GTF_thumb_cell-list {
+    width: 100%;
+}
+
+.GTF_thumb_cell {
+    margin: 0px;
+    display: block;
+    width: 150px;
+    /*
+    display: table-cell;
+    vertical-align: middle;
+      */
+}
+
+.GTF_thumbs_area {
+    width: 100%;
+    overflow: hidden;
+}
+
+.GTF_thumbs_container {
+    width: 1200px;
+    text-align: center;
+}
+
+.GTF_thumbs_container_body {
+    width: 100%;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.GTF_thumb_spacing {
+    width: .5%;
+    float: left;
+    height: 7px;
+    margin: 0px;
+    display: block;
+}
+
+.GTF_thumb_cell-list img, .GTF_thumb_cell img {
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.GTF_thumb_cell-list img:hover, .GTF_thumb_cell img:hover {
+    -webkit-transform: scale(1.2) translate(0, -8px);
+    -moz-transform: scale(1.2) translate(0, -8px);
+    -o-transform: scale(1.2) translate(0, -8px);
+    transform: scale(1.2) translate(0, -8px);
+    filter: contrast(130%);
+    -webkit-filter: contrast(130%);
+    -moz-filter: contrast(130%);
+    -o-filter: contrast(130%);
+    -ms-filter: contrast(130%);
+}

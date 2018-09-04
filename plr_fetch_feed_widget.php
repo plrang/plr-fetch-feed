@@ -1,9 +1,7 @@
 <?php
 // RSS - Get This Feed WIDGET part
-// Plrang GFX 2013
+// Plrang Art 2013 / 2018
 // [Fetch feed] widget for plugin
-
-
 
 class PLR_fetch_feed_widget extends WP_Widget {
 
@@ -20,7 +18,6 @@ class PLR_fetch_feed_widget extends WP_Widget {
                 ) // Args
         );
     }
-
 
 
     /**
@@ -52,8 +49,6 @@ class PLR_fetch_feed_widget extends WP_Widget {
         $_tmp_ = $SY_PLR_fetch_feed->get_feed( $items_count, $sort, $feed_URL  ); 
 
         echo $_tmp_;
-
-
         echo $after_widget;
     }
 
@@ -81,12 +76,7 @@ class PLR_fetch_feed_widget extends WP_Widget {
         $instance['sort'] = strip_tags($new_instance['sort']);
         $instance['feed_URL'] = strip_tags($new_instance['feed_URL']);
 
-
-
-
         return $instance;
-        
-        
         
     }
 
@@ -99,8 +89,6 @@ class PLR_fetch_feed_widget extends WP_Widget {
      */
     public function form( $instance ) {
 
-
-
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }
@@ -110,8 +98,6 @@ class PLR_fetch_feed_widget extends WP_Widget {
 
         $select = esc_attr($instance['sort']);
         $feed_URL = esc_attr($instance['feed_URL']);
-        
-
         ?>
 
         <p>
@@ -150,9 +136,5 @@ class PLR_fetch_feed_widget extends WP_Widget {
 
 // register PLR_fetch_feed_widget widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "PLR_fetch_feed_widget" );' ) );
-
-
-
-
 
 ?>

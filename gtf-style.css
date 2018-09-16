@@ -1,6 +1,61 @@
 /* RSS - Get This Feed - WP plugin CSS - by Plramg Art */
 /* plr-fetch-feed */
 
+
+.GTF_thumbs_area {
+    width: 100%;
+    overflow: hidden;
+    display:flex;
+    margin:auto;
+    margin-top:30pt;
+    justify-content: space-between;
+    flex-shrink: 0 ;
+    flex-wrap: wrap;
+}
+
+
+.GTF_thumbs_container {
+    width: 1200px;
+    text-align: center;
+}
+
+.GTF_thumbs_container_body {
+    width: 100%;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* Removed due to using flex */
+.GTF_thumb_spacing {
+    width: .3rem;
+    float: left;
+    height: 7px;
+    margin: 0;
+    display: block;
+    display:none;
+}
+
+
+.GTF_thumb_cell-list img
+, .GTF_thumb_cell img {
+    transition: all 0.3s ease-in-out;
+    margin:0;
+    padding:0;
+    
+    
+}
+
+.GTF_thumb_cell-list img:hover
+, .GTF_thumb_cell img:hover {
+    transform: scale(1.2) translate(0, -8px);
+    filter: contrast(130%);  
+    box-shadow: 0 0 5px 5px #22222244;
+}
+
+
+
 .GTF_thumb_frame {
     width: 150px;
     height: 150px;
@@ -8,8 +63,13 @@
     margin: 0px;
     overflow: hidden;
     position: relative;
-    background: #fff;
-    margin-bottom: 26px;
+    background: #888;
+    margin-bottom: 6pt;
+    
+}
+
+.GTF_thumb_frame a {
+    
 }
 
 .GTF_thumb_frame-list {
@@ -31,15 +91,32 @@
     position: absolute;
     width: 150px;
     height: 150px;
-    /*
-    top:-60%;
-    left:-10%;*/
+/*     overflow-y:  scroll; */
 }
 
 .GTF_thumb_inner_frame-list {
     width: 100%;
     position: absolute;
 }
+
+
+.GTF_thumb_cell {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    padding:0;
+    
+}
+
+.GTF_thumb_cell a *
+{ 
+    margin:0 !important;
+    padding:0 !important;}
+
+
+
 
 .GTF_thumb_IMG {}
 
@@ -48,29 +125,43 @@
 }
 
 div.GTF_thumb_cell h5 {
-    height: 30px;
+    
+    display: flex;
+    justify-content: start;
+    text-align: left;
+    
+    height: 37pt;
     font-size: 10pt;
-    margin-bottom: 16px;
+    margin:0;
+    padding:2pt 3pt 0 4pt  !important;;
+    
+    margin-bottom:2px !important;
     overflow:hidden;
-    line-height: 12pt;
+    line-height: .95rem;
     font-weight: normal;
+
+    
 }
 
-div.GTF_thumb_cell img {
+
+.GTF_thumb_cell  img {
     clear: both;
-    margin: auto;
-    display: block;
-    margin-top: 20px;
-    width: 150px;
+    margin:0;
+    padding:0;
+    width: 100%;
+    object-fit:fill !important;
+    
 }
 
-div.GTF_thumb_cell img:after {
+
+/* div.GTF_thumb_cell img:after {
     content: ".";
     visibility: hidden;
     display: block;
     height: 0;
     clear: both;
 }
+ */
 
 .GTF_thumb_cell-list img {
     margin: 0 auto;
@@ -81,48 +172,3 @@ div.GTF_thumb_cell img:after {
     width: 100%;
 }
 
-.GTF_thumb_cell {
-    margin: 0px;
-    display: block;
-    width: 150px;
-    /*
-    display: table-cell;
-    vertical-align: middle;
-      */
-}
-
-.GTF_thumbs_area {
-    width: 100%;
-    overflow: hidden;
-}
-
-.GTF_thumbs_container {
-    width: 1200px;
-    text-align: center;
-}
-
-.GTF_thumbs_container_body {
-    width: 100%;
-    margin: auto;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.GTF_thumb_spacing {
-    width: .5%;
-    float: left;
-    height: 7px;
-    margin: 0px;
-    display: block;
-}
-
-.GTF_thumb_cell-list img
-, .GTF_thumb_cell img {
-    transition: all 0.6s ease-in-out;
-}
-
-.GTF_thumb_cell-list img:hover
-, .GTF_thumb_cell img:hover {
-    transform: scale(1.2) translate(0, -8px);
-    filter: contrast(130%);  
-}

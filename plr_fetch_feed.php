@@ -105,7 +105,15 @@ if ( ! is_wp_error( $feed ) ) : // Checks that the object is created correctly
         */
 
             $_desc = $item->get_description();
+
+
+            // TODO: at the moment it is divided to pieces
+            // also had to hard code: object-fit:cover !important
+
             $_desc = preg_replace ( '/alt=".*-minipic".*/' , '>' , $_desc);
+            $_desc = preg_replace ( '/<\/*p>/' , '' , $_desc);
+            $_desc = preg_replace ( '/The post.*/' , '' , $_desc);
+            $_desc = preg_replace ( '/alt=""[\/\s]*>(.*)/' , 'alt="$1" style="object-fit:cover !important" />' , $_desc);
 
         /*
         if ($enclosure = $item->get_enclosure())
@@ -113,6 +121,9 @@ if ( ! is_wp_error( $feed ) ) : // Checks that the object is created correctly
             echo $enclosure->get_thumbnail();
             }
         */
+
+
+        
 
         switch ($style){
             case 'image-list':
@@ -138,7 +149,7 @@ if ( ! is_wp_error( $feed ) ) : // Checks that the object is created correctly
                 $_feed_html .= "<div class=\"GTF_thumb_cell\" >";
                 $_feed_html .= "<div ><a href=\"".$item->get_permalink()
                     . '" target="_imagerion" >'
-                    . '<h5 style="margin-left:6px;margin-top:4px;">'
+                    . '<h5>'
                     . $item->get_title()
                     . "</h5>"
                     . "<p>".$_desc."</p></a>"
@@ -244,4 +255,3 @@ function plr_getthisfeed_shortcode ( $atts )
 
 
 ?>
-

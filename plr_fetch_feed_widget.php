@@ -45,8 +45,9 @@ class PLR_fetch_feed_widget extends WP_Widget {
         $sort = $instance['sort'];  
         $feed_URL = esc_attr($instance['feed_URL']);
         
-        
-        $_tmp_ = $SY_PLR_fetch_feed->get_feed( $items_count, $sort, $feed_URL  ); 
+        $theme =  $instance['theme'];
+
+        $_tmp_ = $SY_PLR_fetch_feed->get_feed( $items_count, $sort, $feed_URL, $theme ); 
 
         echo $_tmp_;
         echo $after_widget;
@@ -72,9 +73,12 @@ class PLR_fetch_feed_widget extends WP_Widget {
         $num = intval($num);
         $num = ($num>1)?$num:1;
         $num = ($num<=16)?$num:16;
+        
         $instance['items_count'] = $num;
         $instance['sort'] = strip_tags($new_instance['sort']);
         $instance['feed_URL'] = strip_tags($new_instance['feed_URL']);
+        $instance['theme'] = $new_instance['theme'];
+        
 
         return $instance;
         
@@ -98,6 +102,8 @@ class PLR_fetch_feed_widget extends WP_Widget {
 
         $select = esc_attr($instance['sort']);
         $feed_URL = esc_attr($instance['feed_URL']);
+        $theme = esc_attr($instance['theme']);
+
         ?>
 
         <p>
@@ -129,6 +135,25 @@ class PLR_fetch_feed_widget extends WP_Widget {
          </p>
          </label>
         
+        
+         <label for="<?php echo  $this->get_field_id("theme"); ?>">
+         <p>Theme <select name="<?php echo  $this->get_field_name("theme"); ?>" id="<?php echo  $this->get_field_id("theme") ?>">
+        
+            <?php
+                 $options = array('dark'=>"Dark", 'light'=>"Light", 'off'=>"OFF");
+             foreach ($options as $option=>$_val) {
+                 echo '<option value="' . $option . '" id="' . $option . '"', $theme == $option ? ' selected="selected"' : '', '>', $_val, '</option>';
+             }
+             
+             ?>
+            </select>
+
+         </p>
+         </label>
+
+
+
+
         <?php 
     }
 
